@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Key Highlights - Rajasthan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+  <div class="container">
+    <h2 class="section-title">KEY HIGHLIGHTS</h2>
+    <h3 class="city-title">| RAJASTHAN</h3>
+    <div class="highlight">
+      <img src="rajasthan-palace.jpg" alt="City Palace Jaipur" class="temple-image">
+      <p class="description">
+        <strong>City Palace, Jaipur</strong> is a stunning blend of Rajput and Mughal architecture with courtyards, gardens, and museums.
+      </p>
+    </div>
+    <div class="highlight">
+      <img src="r2.jpeg" alt="Thar Desert Safari" class="temple-image">
+      <p class="description">
+        <strong>Thar Desert Safari</strong> offers camel rides and cultural shows under sunset-lit dunes near Jaisalmer.
+      </p>
+    </div>
+    <div class="highlight">
+      <img src="r3.jpeg" alt="Lake Pichola" class="temple-image">
+      <p class="description">
+        <strong>Lake Pichola</strong> in Udaipur is known for boat rides and scenic views of the floating Lake Palace.
+      </p>
+    </div>
+    <div class="highlight">
+      <img src="r4.jpeg" alt="Pushkar Fair" class="temple-image">
+      <p class="description">
+        <strong>Pushkar Fair</strong> is a vibrant cultural event with livestock trade, music, and traditional Rajasthani festivities.
+      </p>
+    </div>
+    <div class="highlight">
+      <img src="r5.jpeg" alt="Rajasthani Cuisine" class="temple-image">
+      <p class="description">
+        <strong>Rajasthani Cuisine</strong> features dishes like Dal Baati Churma and Laal Maas, offering royal flavors.
+      </p>
+    </div>
+    <a href="booking.html" class="book-btn">Book Your Trip</a>
+  </div>
+  <script>
+    const highlights = document.querySelectorAll('.highlight');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    highlights.forEach(highlight => {
+      highlight.style.animationPlayState = 'paused';
+      observer.observe(highlight);
+    });
+  </script>
+</body>
+</html>
